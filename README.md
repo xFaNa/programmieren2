@@ -5,6 +5,7 @@ Dieses Repository enthält die Lösungen der Praktikumsaufgaben aus dem Modul
 
 🧠 Autor: Jan Neugebauer
 📚 Hochschule: HSBI
+
 📁 Struktur
 
 Die Lösungen der Übungsblätter liegen in den Unterordnern.
