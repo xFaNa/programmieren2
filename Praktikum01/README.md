@@ -15,9 +15,9 @@ Am Ende zeigt die Meldung „no changes added to commit“, dass sich aktuell ke
 git add foo.java
 
 git commit -m "Add foo.java"
-```markdown
+
 Die Datei `foo.java` wird zunächst mit `git add` zur Staging Area hinzugefügt und anschließend mit `git commit` gespeichert.
-```
+
 ## Aufgabe: Git-Spiel
 
 ### Was passierte am Tag 01?
@@ -82,3 +82,50 @@ Verbesserung:
 - klare Beschreibung der funktionalen Änderungen
 - keine internen Prozesse wie „rebase“ in Commit-Messages
 
+## Gradle
+
+### Tasks
+
+Die verfügbaren Tasks können mit dem Befehl `./gradlew tasks` angezeigt werden.
+
+Wichtige Tasks:
+- run: startet die Anwendung
+- build: baut und testet das Projekt
+- test: führt Tests aus
+- clean: löscht das Build-Verzeichnis
+
+---
+
+### Projektstruktur
+
+- app/src/main/java: enthält den Anwendungscode
+- app/src/test/java: enthält die Testklassen
+- app/build.gradle: Build-Konfiguration
+
+---
+
+### Aufbau des Buildskripts
+
+Das Buildskript ist in mehrere Abschnitte unterteilt:
+
+- plugins: definiert verwendete Plugins (z. B. application)
+- repositories: definiert Quellen für Abhängigkeiten
+- dependencies: definiert externe Bibliotheken
+- java: legt die verwendete Java-Version fest
+- application: definiert die main-Klasse
+
+---
+
+### Application Plugin
+
+Das application-Plugin ermöglicht das Ausführen der Anwendung über den Task `run`.
+
+Der Task `run` startet die konfigurierte main-Klasse und hängt von anderen Tasks wie `classes` ab, sodass der Code vor der Ausführung kompiliert wird.
+
+---
+
+### Spotless
+
+Das Plugin Spotless wird zur automatischen Formatierung des Codes verwendet.
+
+Der Task `spotlessApply` formatiert den Code automatisch.
